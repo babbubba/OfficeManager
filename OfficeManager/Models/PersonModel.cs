@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OfficeManager.Models
 {
-    public class PersonModel : IPerson, IPersistentEntity
+    public class PersonModel : IPersonModel, IPersistentEntity
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
@@ -30,6 +30,6 @@ namespace OfficeManager.Models
             }
         }
 
-        public virtual IRoom Room { get; set; }
+        public virtual IRoomModel Room { get; set; }
     }
 }

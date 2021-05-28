@@ -12,35 +12,35 @@ namespace OfficeManager.Repository
         {
         }
 
-        public void CreatePerson(IPerson person)
+        public void CreatePerson(IPersonModel person)
         {
             Create((PersonModel)person);
         }
 
-        public void DeletePerson(IPerson person)
+        public void DeletePerson(IPersonModel person)
         {
             Delete((PersonModel)person);
         }
 
-        public IPerson GetPersonById(int id)
+        public IPersonModel GetPersonById(int id)
         {
             return GetById<PersonModel>(id);
         }
 
-        public IEnumerable<IPerson> GetPersons()
+        public IEnumerable<IPersonModel> GetPersons()
         {
             return Query<PersonModel>()
                 .ToList();
         }
 
-        public IEnumerable<IPerson> GetPersonsByName(string name)
+        public IEnumerable<IPersonModel> GetPersonsByName(string name)
         {
             return Query<PersonModel>()
                 .Where(p => p.Name == name)
                 .ToList();
         }
 
-        public IEnumerable<IPerson> GetPersonsHavingBirthday(int day, int month)
+        public IEnumerable<IPersonModel> GetPersonsHavingBirthday(int day, int month)
         {
             return Query<PersonModel>()
                 .Where(p => p.BirthDate.Day == day && p.BirthDate.Month == month)

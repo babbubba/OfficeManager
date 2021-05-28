@@ -2,14 +2,15 @@
 
 namespace OfficeManager.Interfaces
 {
-    public interface IPerson
+    public interface IPersonViewModel
     {
-        int Age { get; }
+        int Age { get; set; }
         DateTime BirthDate { get; set; }
-        string DisplayName { get; }
+        string DisplayName { get; set; }
         int Id { get; set; }
         string Name { get; set; }
-        IRoom Room { get; set; }
+        int RoomId { get; set; }
+        string RoomName { get; set; }
         string Surname { get; set; }
     }
 }

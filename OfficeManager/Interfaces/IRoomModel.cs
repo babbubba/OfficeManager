@@ -2,11 +2,11 @@
 
 namespace OfficeManager.Interfaces
 {
-    public interface IRoom
+    public interface IRoomModel
     {
         int Id { get; set; }
         string Name { get; set; }
-        IEnumerable<IPerson> Occupants { get; set; }
+        IEnumerable<IPersonModel> Occupants { get; set; }
         int OccupantsCount { get; }
     }
 }
