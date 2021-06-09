@@ -4,7 +4,7 @@ using OfficeManager.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OfficeManager.Repository
+namespace OfficeManager.Repositories
 {
     public class PersonsRepository : bs.Data.Repository, IPersonsRepository
     {
