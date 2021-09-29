@@ -16,7 +16,10 @@ namespace OfficeManager.Repositories
         {
             Create((PersonModel)person);
         }
-
+        public void UpdatePerson(IPersonModel person)
+        {
+            Update((PersonModel)person);
+        }
         public void DeletePerson(IPersonModel person)
         {
             Delete((PersonModel)person);

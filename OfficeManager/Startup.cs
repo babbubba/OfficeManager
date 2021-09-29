@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OfficeManager.Interfaces;
 using OfficeManager.Repositories;
+using OfficeManager.Services;
+using System;
 
 namespace OfficeManager
 {
@@ -36,15 +38,21 @@ namespace OfficeManager
                 Update = true,
             };
 
+
             // Chiamo un metodo del paccheto bs.Data che registra nei servizi dell'applicazione l' ORM,
             // lo configura, legge e crea il mapping dei 'Models', registra la Unit Of Work (gestione transazioni)
             // e registra il Repository base (che sarà la classe base di ogni repository che creeremo noi)
             services.AddBsData(dbContext);
 
+            // Registro tutti i profili di mapping di Automapper. Automapper è una libreria che ci permette di fare in modo rapido la
+            // trasformazione di una classe model in una classe view model e viceversa
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             // Registro i repositories che abbiamo creato.
             // NB: Il pattern repository alle volte rende più laborioso lo sviluppo ma rende l'applicazione molto piu scalabile 
             // e leggibile
             services.AddScoped<IPersonsRepository, PersonsRepository>();
+            services.AddScoped<IPersonsService, PersonsService>();
 
             // Questo fa in modo che i controllers vengano registrati come servizi e di conseguenza possano
             // accedere agli altri servizi registrati tramite DI (Dependency Injection)
