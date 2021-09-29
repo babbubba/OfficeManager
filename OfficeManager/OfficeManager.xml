@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OfficeManager</name>
+    </assembly>
+    <members>
+        <member name="T:OfficeManager.Controllers.PersonsController">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:OfficeManager.Controllers.PersonsController.personsService">
+            <summary>
+            The persons service
+            </summary>
+        </member>
+        <member name="F:OfficeManager.Controllers.PersonsController.unitOfWork">
+            <summary>
+            The unit of work
+            </summary>
+        </member>
+        <member name="M:OfficeManager.Controllers.PersonsController.#ctor(bs.Data.Interfaces.IUnitOfWork,OfficeManager.Interfaces.IPersonsService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeManager.Controllers.PersonsController"/> class.
+            </summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="personsService">The persons service.</param>
+        </member>
+        <member name="M:OfficeManager.Controllers.PersonsController.CreatePerson(OfficeManager.ViewModels.PersonViewModel)">
+             <summary>
+             Creates the person.
+             </summary>
+             <remarks>
+             Richiesta di esempio:
+            
+                 POST /Persons
+                 {
+                    "name": "Mario",
+                    "surname": "Rossi",
+                    "birthDate": "1990-06-10"
+                 }
+            
+             </remarks>
+             <param name="personViewModel">The person view model.</param>
+             <returns></returns>
+        </member>
+        <member name="M:OfficeManager.Controllers.PersonsController.DeletePerson(System.String)">
+            <summary>
+            Deletes the person.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeManager.Controllers.PersonsController.GetAllPersons">
+            <summary>
+            Gets all persons.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeManager.Controllers.PersonsController.GetPersonById(System.String)">
+            <summary>
+            Gets the person by identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeManager.Controllers.PersonsController.UpdatePerson(OfficeManager.ViewModels.PersonViewModel)">
+            <summary>
+            Updates the person.
+            </summary>
+            <param name="personViewModel">The person view model.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

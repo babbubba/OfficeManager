@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using OfficeManager.Interfaces;
+using OfficeManager.Models;
 using System;
 using System.Collections.Generic;
 
